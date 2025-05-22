@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style_landing.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <title>RailRoute - Login</title>
+
+    <style>
+        :root {
+            --primary-color: #2A474F;
+            --secondary-color: #FF725E;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --light-bg: #f8f9fa;
+            --dark-text: #343a40;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .signup-body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .signup-body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/api/placeholder/1920/1080') center/cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        /* Navbar Enhancement */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            transition: var(--transition);
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Login Box Enhancement */
+        #loginbox {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 3rem 2rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #loginbox::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        #loginaccount {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            position: relative;
+        }
+
+        #loginaccount::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary-color), #ff9a8b);
+            border-radius: 2px;
+        }
+
+        /* Form Controls Enhancement */
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 0.8rem 1rem;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.9);
+            position: relative;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(255, 114, 94, 0.25);
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .form-control.is-valid {
+            border-color: var(--success-color);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.4.4.4-.4L6.23 3.6 5.4 2.77 3.07 5.1 2.6 4.63 1.77 5.46z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+
+        .form-control.is-invalid {
+            border-color: var(--danger-color);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 4.6 1.4 1.4'/%3e%3cpath d='m5.8 7.4 1.4-1.4'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+
+        .invalid-feedback {
+            display: block;
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 0.875em;
+            color: var(--danger-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Submit Button Enhancement */
+        #submitbuttonlogin {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #ff9a8b 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            width: 100%;
+            margin-top: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        #submitbuttonlogin:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 114, 94, 0.4);
+        }
+
+        #submitbuttonlogin:active {
+            transform: translateY(0);
+        }
+
+        #submitbuttonlogin.loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Notification System */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
+            min-width: 320px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            opacity: 0;
+            transform: translateX(100%);
+            transition: var(--transition);
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            color: white;
+            border-radius: var(--border-radius);
+        }
+
+        .notification-success .notification-content {
+            background: linear-gradient(135deg, var(--success-color), #20c997);
+        }
+
+        .notification-error .notification-content {
+            background: linear-gradient(135deg, var(--danger-color), #e74c3c);
+        }
+
+        .notification-warning .notification-content {
+            background: linear-gradient(135deg, var(--warning-color), #f39c12);
+            color: var(--dark-text);
+        }
+
+        .notification-info .notification-content {
+            background: linear-gradient(135deg, var(--info-color), #3498db);
+        }
+
+        .notification-icon {
+            font-size: 1.25rem;
+            margin-right: 0.75rem;
+            font-weight: bold;
+        }
+
+        .notification-message {
+            flex-grow: 1;
+            font-weight: 500;
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            color: currentColor;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 0.75rem;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .notification-close:hover {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #loginbox {
+                margin: 1rem;
+                padding: 2rem 1.5rem;
+            }
+
+            #loginaccount {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Animation for form elements */
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 114, 94, 0.1), transparent);
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .form-group:focus-within::before {
+            opacity: 1;
+        }
+
+        /* Custom button styles */
+        .custom-button {
+            border-radius: 8px;
+            font-weight: 500;
+            padding: 0.5rem 1.25rem;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .custom-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .custom-button-outline {
+            border-color: var(--primary-color) !important;
+            background: transparent !important;
+        }
+
+        .custom-button-outline:hover {
+            background: var(--primary-color) !important;
+            color: white !important;
+        }
+
+        /* Loading overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .loading-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+    </style>
+
+    <script src="login.js" defer></script>
+</head>
+
+<body class="signup-body">
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="landing.html">
+                <img src="/api/placeholder/120/40" alt="RailRoute Logo">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="route_argowilis.html"><i class="fas fa-route me-2"></i>Route</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="train.html"><i class="fas fa-train me-2"></i>Train</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="departure.html"><i class="fas fa-clock me-2"></i>Departure</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="destination.html"><i class="fas fa-map-marker-alt me-2"></i>Destination</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <a href="signup.html" class="btn custom-button me-2" style="background-color: #FF725E; color: #2A474F;">
+                        <i class="fas fa-user-plus me-2"></i>Sign Up
+                    </a>
+                    <a href="login.html" class="btn custom-button custom-button-outline" style="color: #2A474F;">
+                        <i class="fas fa-sign-in-alt me-2"></i>Login
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto" id="loginbox">
+                <h2 id="loginaccount">
+                    <i class="fas fa-user-circle me-3" style="color: var(--secondary-color);"></i>
+                    Login to Your Account
+                </h2>
+                
+                <form id="formnya">
+                    <div class="form-group">
+                        <div class="mb-3 row d-flex align-items-center">
+                            <div class="col-sm-12">
+                                <div class="input-group">
+                                    <span class="input-group-text" style="border-radius: 10px 0 0 10px; border: 2px solid #e9ecef; border-right: none; background: rgba(255,255,255,0.9);">
+                                        <i class="fas fa-envelope" style="color: var(--primary-color);"></i>
+                                    </span>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter your email" style="border-radius: 0 10px 10px 0; border-left: none;" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3 row d-flex align-items-center">
+                            <div class="col-sm-12">
+                                <div class="input-group">
+                                    <span class="input-group-text" style="border-radius: 10px 0 0 10px; border: 2px solid #e9ecef; border-right: none; background: rgba(255,255,255,0.9);">
+                                        <i class="fas fa-lock" style="color: var(--primary-color);"></i>
+                                    </span>
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Enter your password" style="border-radius: 0 10px 10px 0; border-left: none;" required>
+                                    <button class="btn" type="button" id="togglePassword" style="border-radius: 0 10px 10px 0; border: 2px solid #e9ecef; border-left: none; background: rgba(255,255,255,0.9); color: var(--primary-color);">
+                                        <i class="fas fa-eye" id="toggleIcon"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submitbuttonlogin">
+                        <i class="fas fa-sign-in-alt me-2"></i>Submit
+                    </button>
+
+                    <div class="text-center mt-3">
+                        <p class="mb-2" style="color: var(--primary-color);">
+                            Don't have an account? 
+                            <a href="signup.html" style="color: var(--secondary-color); text-decoration: none; font-weight: 600;">
+                                Sign up here
+                            </a>
+                        </p>
+                        <a href="#" style="color: var(--primary-color); text-decoration: none; font-size: 0.9rem;">
+                            <i class="fas fa-key me-1"></i>Forgot Password?
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Password toggle functionality
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('floatingPassword');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        });
+
+        // Add floating label effect
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+
+        // Smooth page load animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add ripple effect to buttons
+        document.querySelectorAll('button, .btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
+
+    <style>
+        /* Additional CSS for enhanced effects */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .input-group-text {
+            transition: var(--transition);
+        }
+
+        .form-group.focused .input-group-text {
+            border-color: var(--secondary-color);
+            background: rgba(255, 114, 94, 0.1);
+        }
+
+        /* Hover effects for navigation */
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+            transform: translateY(-1px);
+        }
+
+        /* Enhanced form validation styles */
+        .form-control:valid {
+            background-image: none;
+        }
+
+        .form-control:invalid:not(:placeholder-shown) {
+            border-color: var(--danger-color);
+        }
+
+        /* Smooth transitions for all interactive elements */
+        * {
+            box-sizing: border-box;
+        }
+
+        a, button, input, .btn {
+            transition: var(--transition);
+        }
+
+        /* Background pattern overlay */
+        .signup-body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Improved accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus management */
+        .form-control:focus,
+        .btn:focus {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 576px) {
+            .navbar-nav {
+                text-align: center;
+            }
+            
+            .d-flex {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .custom-button {
+                width: 100%;
+            }
+            
+            #loginbox {
+                margin: 0.5rem;
+                padding: 1.5rem;
+            }
+            
+            .notification {
+                left: 10px;
+                right: 10px;
+                width: auto;
+                min-width: auto;
+            }
+        }
+    </style>
+</body>
+</html>

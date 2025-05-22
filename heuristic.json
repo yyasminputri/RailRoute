@@ -1,0 +1,257 @@
+{
+    "docs": [
+      {
+        "id": "657d5f4f6b7ad3ad0bc2187c",
+        "departure": "Bundaran HI",
+        "destination": "Setiabudi Astra",
+        "nilai_heuristic": 37,
+        "createdAt": "2023-12-16T08:26:55.904Z",
+        "updatedAt": "2023-12-16T08:26:55.904Z",
+        "validation": {
+          "isValid": true,
+          "validatedAt": "2023-12-16T08:26:55.904Z",
+          "distance_km": 3.2,
+          "estimated_time_minutes": 8,
+          "route_complexity": "low"
+        },
+        "metadata": {
+          "priority": "high",
+          "frequency": "daily",
+          "last_updated_by": "system"
+        }
+      },
+      {
+        "id": "657d5f3f6b7ad3ad0bc21872",
+        "departure": "Bundaran HI",
+        "destination": "Dukuh Atas BNI",
+        "nilai_heuristic": 70,
+        "createdAt": "2023-12-16T08:26:39.702Z",
+        "updatedAt": "2023-12-16T08:26:39.702Z",
+        "validation": {
+          "isValid": true,
+          "validatedAt": "2023-12-16T08:26:39.702Z",
+          "distance_km": 2.1,
+          "estimated_time_minutes": 12,
+          "route_complexity": "medium"
+        },
+        "metadata": {
+          "priority": "medium",
+          "frequency": "daily",
+          "last_updated_by": "system"
+        }
+      },
+      {
+        "id": "657d5de1c342d307719baac6",
+        "departure": "Dukuh Atas BNI",
+        "destination": "Bundaran HI",
+        "nilai_heuristic": 70,
+        "createdAt": "2023-12-16T08:20:49.996Z",
+        "updatedAt": "2023-12-16T08:26:18.681Z",
+        "validation": {
+          "isValid": true,
+          "validatedAt": "2023-12-16T08:26:18.681Z",
+          "distance_km": 2.1,
+          "estimated_time_minutes": 12,
+          "route_complexity": "medium",
+          "bidirectional_match": "657d5f3f6b7ad3ad0bc21872"
+        },
+        "metadata": {
+          "priority": "medium",
+          "frequency": "daily",
+          "last_updated_by": "admin",
+          "revision_count": 1
+        }
+      },
+      {
+        "id": "657d5dd1c342d307719baabc",
+        "departure": "Dukuh Atas BNI",
+        "destination": "Setiabudi Astra",
+        "nilai_heuristic": 44,
+        "createdAt": "2023-12-16T08:20:33.070Z",
+        "updatedAt": "2023-12-16T08:20:33.070Z",
+        "validation": {
+          "isValid": true,
+          "validatedAt": "2023-12-16T08:20:33.070Z",
+          "distance_km": 1.8,
+          "estimated_time_minutes": 9,
+          "route_complexity": "low"
+        },
+        "metadata": {
+          "priority": "high",
+          "frequency": "daily",
+          "last_updated_by": "system"
+        }
+      },
+      {
+        "id": "657d5dc3c342d307719baab2",
+        "departure": "Setiabudi Astra",
+        "destination": "Dukuh Atas BNI",
+        "nilai_heuristic": 44,
+        "createdAt": "2023-12-16T08:20:19.382Z",
+        "updatedAt": "2023-12-16T08:20:19.382Z",
+        "validation": {
+          "isValid": true,
+          "validatedAt": "2023-12-16T08:20:19.382Z",
+          "distance_km": 1.8,
+          "estimated_time_minutes": 9,
+          "route_complexity": "low",
+          "bidirectional_match": "657d5dd1c342d307719baabc"
+        },
+        "metadata": {
+          "priority": "high",
+          "frequency": "daily",
+          "last_updated_by": "system"
+        }
+      },
+      {
+        "id": "657d5db9c342d307719baaa8",
+        "departure": "Setiabudi Astra",
+        "destination": "Bundaran HI",
+        "nilai_heuristic": 37,
+        "createdAt": "2023-12-16T08:20:09.562Z",
+        "updatedAt": "2023-12-16T08:20:09.562Z",
+        "validation": {
+          "isValid": true,
+          "validatedAt": "2023-12-16T08:20:09.562Z",
+          "distance_km": 3.2,
+          "estimated_time_minutes": 8,
+          "route_complexity": "low",
+          "bidirectional_match": "657d5f4f6b7ad3ad0bc2187c"
+        },
+        "metadata": {
+          "priority": "high",
+          "frequency": "daily",
+          "last_updated_by": "system"
+        }
+      },
+      {
+        "id": "657d5da9c342d307719baa9e",
+        "departure": "Bendungan Hilir",
+        "destination": "Setiabudi Astra",
+        "nilai_heuristic": 33,
+        "createdAt": "2023-12-16T08:19:53.811Z",
+        "updatedAt": "2023-12-16T08:19:53.811Z",
+        "validation": {
+          "isValid": true,
+          "validatedAt": "2023-12-16T08:19:53.811Z",
+          "distance_km": 2.8,
+          "estimated_time_minutes": 7,
+          "route_complexity": "low"
+        },
+        "metadata": {
+          "priority": "medium",
+          "frequency": "weekly",
+          "last_updated_by": "system"
+        }
+      },
+      {
+        "id": "657d5d9dc342d307719baa94",
+        "departure": "Bendungan Hilir",
+        "destination": "Istora Mandiri",
+        "nilai_heuristic": 40,
+        "createdAt": "2023-12-16T08:19:41.926Z",
+        "updatedAt": "2023-12-16T08:19:41.926Z",
+        "validation": {
+          "isValid": true,
+          "validatedAt": "2023-12-16T08:19:41.926Z",
+          "distance_km": 1.5,
+          "estimated_time_minutes": 8,
+          "route_complexity": "low"
+        },
+        "metadata": {
+          "priority": "medium",
+          "frequency": "daily",
+          "last_updated_by": "system"
+        }
+      },
+      {
+        "id": "657d5d8ec342d307719baa8a",
+        "departure": "Istora Mandiri",
+        "destination": "Bendungan Hilir",
+        "nilai_heuristic": 40,
+        "createdAt": "2023-12-16T08:19:26.489Z",
+        "updatedAt": "2023-12-16T08:19:26.489Z",
+        "validation": {
+          "isValid": true,
+          "validatedAt": "2023-12-16T08:19:26.489Z",
+          "distance_km": 1.5,
+          "estimated_time_minutes": 8,
+          "route_complexity": "low",
+          "bidirectional_match": "657d5d9dc342d307719baa94"
+        },
+        "metadata": {
+          "priority": "medium",
+          "frequency": "daily",
+          "last_updated_by": "system"
+        }
+      },
+      {
+        "id": "657d5d82c342d307719baa80",
+        "departure": "Istora Mandiri",
+        "destination": "Senayan",
+        "nilai_heuristic": 17,
+        "createdAt": "2023-12-16T08:19:14.621Z",
+        "updatedAt": "2023-12-16T08:19:14.621Z",
+        "validation": {
+          "isValid": true,
+          "validatedAt": "2023-12-16T08:19:14.621Z",
+          "distance_km": 1.2,
+          "estimated_time_minutes": 4,
+          "route_complexity": "low"
+        },
+        "metadata": {
+          "priority": "high",
+          "frequency": "daily",
+          "last_updated_by": "system"
+        }
+      }
+    ],
+    "totalDocs": 29,
+    "limit": 10,
+    "totalPages": 3,
+    "page": 1,
+    "pagingCounter": 1,
+    "hasPrevPage": false,
+    "hasNextPage": true,
+    "prevPage": null,
+    "nextPage": 2,
+    "validation_summary": {
+      "total_validated": 10,
+      "valid_routes": 10,
+      "invalid_routes": 0,
+      "last_validation_run": "2023-12-16T08:30:00.000Z",
+      "validation_criteria": {
+        "min_heuristic_value": 10,
+        "max_heuristic_value": 100,
+        "required_fields": ["departure", "destination", "nilai_heuristic"],
+        "bidirectional_consistency": true
+      }
+    },
+    "route_statistics": {
+      "avg_heuristic_value": 43.2,
+      "min_heuristic_value": 17,
+      "max_heuristic_value": 70,
+      "most_common_departure": "Bundaran HI",
+      "most_common_destination": "Setiabudi Astra",
+      "total_unique_stations": 5,
+      "bidirectional_routes": 4
+    },
+    "data_quality": {
+      "completeness_score": 100,
+      "consistency_score": 95,
+      "accuracy_score": 98,
+      "last_quality_check": "2023-12-16T08:30:00.000Z",
+      "issues_found": [],
+      "warnings": [
+        "Route frequency data should be updated more regularly",
+        "Consider adding real-time traffic data for better heuristic values"
+      ]
+    },
+    "api_metadata": {
+      "response_time_ms": 45,
+      "cache_status": "miss",
+      "data_freshness": "current",
+      "compression": "gzip",
+      "schema_version": "1.2.0"
+    }
+  }
