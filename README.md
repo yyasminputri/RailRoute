@@ -12,7 +12,7 @@
 ## 📱 Features
 
 - 🗺️ **Interactive Route Map** – Explore train routes and station connections.
-- 🔍 **Station Search** – Quickly find stations by name or location.
+- 🔍 **Station Search** – Quickly find stations by name or location using BFS algortihm
 - 🧭 **Route Details** – View the full route, including departure and arrival points.
 - 📍 **Nearby Stations** – Discover train stations near your current location.
 - 💡 **Simple and Clean UI** – Intuitive design for easy navigation.
