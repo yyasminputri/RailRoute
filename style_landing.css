@@ -120,7 +120,7 @@ body {
 .hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 900;
-    color: #2A474F;
+    color: white;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -128,7 +128,7 @@ body {
 .hero p {
     font-size: clamp(1.2rem, 3vw, 1.8rem);
     font-weight: 300;
-    color: #2A474F;
+    color: white;
     margin-bottom: 40px;
     opacity: 0.8;
 }
@@ -306,7 +306,7 @@ body {
 
 /* Train Selection */
 .train-container {
-    background: rgba(42, 71, 79, 0.95);
+    background: white;
     backdrop-filter: blur(15px);
     border-radius: 30px;
     padding: 40px;
@@ -320,7 +320,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin-top: 40px;
 }
 
 .train-card {
